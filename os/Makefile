@@ -1,6 +1,6 @@
 
 DIR_DIST=./dist
-HOSTNAME=mist
+NEWHOSTNAME=mist
 
 PACKAGES=net-tools,wireless-tools,hostapd
 PACKAGES_DEV=$(PACKAGES),vim
@@ -11,18 +11,24 @@ sys:
 sys_dev:
 	debootstrap --arch=armhf --variant=minbase --include=$(PACKAGES_DEV) --foreign jessie $(DIR_DIST) http://ftp.us.debian.org/debian
 
+drivers:
+	cp -rv drivers/* $(DIR_DIST)/lib
+
 fstab:
 	cat files/fstab > $(DIR_DIST)/etc/fstab
 
 host:
-	echo "$(HOSTNAME)" > $(DIR_DIST)/etc/hostname
+	echo "$(NEWHOSTNAME)" > $(DIR_DIST)/etc/hostname
 
-drivers:
-	cp -rv drivers/* $(DIR_DIST)/lib/
+hostapd:
+	mkdir $(DIR_DIST)/etc/hostapd
+	cp files/hostapd.conf $(DIR_DIST)/etc/hostapd
 
-dist:		sys fstab host drivers
+dist:		sys fstab host drivers hostapd
 
-dist_dev:	sys_dev fstab host drivers
+dist_dev:	sys_dev fstab host drivers hostapd
 
 clean:
 	rm -rf $(DIR_DIST)
+
+.PHONY: drivers
