@@ -2,7 +2,7 @@
 DIR_DIST=./dist
 NEWHOSTNAME=mist
 
-PACKAGES=net-tools,wireless-tools,hostapd,ifupdown,wpasupplicant,isc-dhcp-client
+PACKAGES=net-tools,iw,hostapd,ifupdown,wpasupplicant,isc-dhcp-client
 PACKAGES_DEV=$(PACKAGES),vim
 
 sys:
