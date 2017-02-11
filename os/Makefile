@@ -2,11 +2,13 @@
 DIR_DIST=./dist
 NEWHOSTNAME=mist
 
-PACKAGES=net-tools,iw,hostapd,wpasupplicant,isc-dhcp-client,isc-dhcp-server
+PACKAGES=net-tools,iw,hostapd,wpasupplicant,isc-dhcp-client,isc-dhcp-server,python2.7
 PACKAGES_DEV=$(PACKAGES),vim
 
+NOPACKAGE=acl,adduser,gcc-4.8-base:armhf,gcc-4.9-base:armhf,grep,gzip,perl-base,sed,tar,zlib1g:armhf
+
 sys:
-	debootstrap --arch=armhf --variant=minbase --include=$(PACKAGES) --foreign jessie $(DIR_DIST) http://ftp.us.debian.org/debian
+	debootstrap --arch=armhf --variant=minbase --exclude=$(NOPACKAGE) --include=$(PACKAGES) --foreign jessie $(DIR_DIST) http://ftp.us.debian.org/debian
 
 sys_dev:
 	debootstrap --arch=armhf --variant=minbase --include=$(PACKAGES_DEV) --foreign jessie $(DIR_DIST) http://ftp.us.debian.org/debian
