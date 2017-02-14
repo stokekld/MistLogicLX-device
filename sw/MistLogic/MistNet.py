@@ -43,14 +43,14 @@ class Network(object):
 
     def ipFlush(self):
         try:
-            os.system('ip addr flush dev "%s"' % self.iface)
+            os.system('ip addr flush dev %s' % self.iface)
             return True
         except:
             return False
 
     def setIp(self, ip, netmask):
         try:
-            os.system('ip addr add "%s"/"%s" dev "%s"' % (self.ip, svelf.netmask, self.iface))
+            os.system('ip addr add %s/%s dev %s' % (self.ip, svelf.netmask, self.iface))
             return True
         except:
             return False
