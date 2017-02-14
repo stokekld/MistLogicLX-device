@@ -1,7 +1,7 @@
 MAIN_DIR = '..'
 
 
-def commandExe(self, command):
+def commandExe(command):
     try:
         os.system(command)
         return True
