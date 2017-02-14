@@ -1,9 +1,10 @@
+from . import MAIN_DIR, commandExe
 import MistLogic, json, os, signal
 
 class NetConf(object):
 
     file = 'netconf.json'
-    path_file = os.path.join(MistLogic.MAIN_DIR, file)
+    path_file = os.path.join(MAIN_DIR, file)
     conf = {'ap':True, 'dhcp':False, 'ip':'192.168.1.1', 'netmask':'255.255.255.0'}
 
     def __init__(self):
@@ -42,16 +43,7 @@ class Network(object):
         self.iface = iface
 
     def ipFlush(self):
-        try:
-            os.system('ip addr flush dev %s' % self.iface)
-            return True
-        except:
-            return False
+        return commandExe('ip addr flush dev %s' % self.iface)
 
     def setIp(self, ip, netmask):
-        try:
-            os.system('ip addr add %s/%s dev %s' % (ip, netmask, self.iface))
-            return True
-        except Exception as e:
-            print e.message, e.args
-            return False
+        return commandExe('ip addr add %s/%s dev %s' % (ip, netmask, self.iface))
