@@ -52,5 +52,6 @@ class Network(object):
         try:
             os.system('ip addr add %s/%s dev %s' % (self.ip, svelf.netmask, self.iface))
             return True
-        except:
+        except Exception as e:
+            print e.message, e.args
             return False
