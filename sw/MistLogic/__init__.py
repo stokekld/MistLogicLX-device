@@ -1,3 +1,4 @@
+import os
 MAIN_DIR = '..'
 
 
