@@ -50,7 +50,7 @@ class Network(object):
 
     def setIp(self, ip, netmask):
         try:
-            os.system('ip addr add %s/%s dev %s' % (self.ip, svelf.netmask, self.iface))
+            os.system('ip addr add %s/%s dev %s' % (ip, netmask, self.iface))
             return True
         except Exception as e:
             print e.message, e.args
