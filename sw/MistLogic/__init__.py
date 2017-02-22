@@ -1,11 +1,9 @@
-import os
-MAIN_DIR = '..'
+# -*- coding: utf-8 -*-
+
+"""
+Módulo de configuración de red del dispositivo
+"""
+
+MAIN_DIR = '/etc/mistlogic'
 
 
-def commandExe(command):
-    try:
-        os.system(command)
-        return True
-    except Exception as e:
-        print e.message, e.args
-        return False

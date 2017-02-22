@@ -1,16 +1,28 @@
 from subprocess import check_output
+from .MistSys import commandExe
+from MistLogic.MistError import Error, Info
 import os, signal
+
 
 class Process(object):
     def getPid(self, name):
         try:
-            return check_output(["pidof", name])
+            # return int(check_output(["pidof", name]))
+            return int(commandExe("pidof %s" % name).output)
         except:
+            Info("No se encontro el pid de %s" % name)
             return 0
 
-    def killByPid(self, pid):
+    def killByName(self, name):
+
+        pid = self.getPid(name)
+
+        if pid is 0:
+            return False
+
         try:
             os.kill(pid, signal.SIGKILL)
             return True
-        except:
-            return False
+        except Exception as e:
+            raise Error(e.message)
+

@@ -1,13 +1,20 @@
-from . import MAIN_DIR, commandExe
-import MistLogic, json, os, signal
+from . import MAIN_DIR
+from .MistSys import commandExe
+import MistLogic, json, os
 
 class NetConf(object):
+    """
+    Clase para la configuracion de red
+    """
 
     file = 'netconf.json'
     path_file = os.path.join(MAIN_DIR, file)
-    conf = {'ap':True, 'dhcp':False, 'ip':'192.168.1.1', 'netmask':'255.255.255.0'}
+    conf = {'ip': "192.168.1.1", 'ap': True, 'netmask': "255.255.255.0", 'dhcp': True, 'ssid': "", 'passphrase': ""}
 
     def __init__(self):
+        """
+        Inicia cargando la configuracion
+        """
         self.load()
 
     def load(self):
@@ -29,6 +36,7 @@ class NetConf(object):
     def get(self, key):
         if self.exist(key):
             return self.conf[key]
+        raise Error('No se encontro el dato en la configuracion')
 
     def set(self, key, value):
         if self.exist(key):
