@@ -42,7 +42,9 @@ class dbDevice(db):
 
     def getDefault(self):
         return {
-            'manual': True
+            'manual': False,
+            'auto': False,
+            'password': "f36569537d40464df7dab6fb4aae6819"
         }
         
 class dbNet(db):
