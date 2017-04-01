@@ -1,0 +1,48 @@
+#img_logo {
+	max-height: 100px;
+	max-width: 100px;
+}
+#login-form input[type=text], input[type=password] {
+	margin-top: 10px;
+}
+.btn {
+	border-radius: 0px;
+}
+
+.btn:focus, .btn:active:focus, .btn.active:focus, .btn.focus, .btn:active.focus, .btn.active.focus {
+	outline: none;
+}
+
+.btn-lg, .btn-group-lg > .btn {
+	border-radius: 0px;
+}
+
+.btn-link {
+	padding: 5px 10px 0px 0px;
+	color: #FFFFFF;
+}
+
+.btn-link:hover, .btn-link:focus {
+	color: #d3d3d3;
+	text-decoration: none;
+}
+
+.form-control {
+	border-radius: 0px;
+}
+
+.btn-config {
+	background: #080942;
+	color: #ffffff;
+}
+
+.btn-config:hover, .btn-config:focus, .btn-config:active, .btn-config.active, .open > .dropdown-toggle.btn-config {
+	background: #221c69;
+	color: #ffffff;
+}
+
+.btn-config:active, .btn-config.active, .btn-config:active:focus {
+	background: #221c69;
+	color: #ffffff;
+	box-shadow: none;
+}
