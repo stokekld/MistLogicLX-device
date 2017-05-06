@@ -1,15 +1,21 @@
 from abc import ABCMeta, abstractmethod
 from pymongo import MongoClient
+from MistTrigger import deviceTrigger
 
 class db(object):
     __metaclass__ = ABCMeta
     @abstractmethod
     def getDefault(self):
         pass
+    
+    @abstractmethod
+    def trigger(self):
+        pass
 
     def __init__(self, dbName):
         self.__dbName = dbName
         self.__connect()
+
     def __connect(self):
 
         self.__client = MongoClient()
@@ -31,6 +37,7 @@ class db(object):
         return self.__device.find_one()[prop]
 
     def setProp(self, prop, value):
+        self.trigger()
         return self.__device.update({}, {prop: value})
 
     
@@ -46,6 +53,10 @@ class dbDevice(db):
             'auto': False,
             'password': "f36569537d40464df7dab6fb4aae6819"
         }
+
+    def trigger(self):
+        deviceTrigger({'manual': self.getProp('manual')})
+        pass
         
 class dbNet(db):
 
@@ -61,4 +72,7 @@ class dbNet(db):
             'ssid': "",
             'passphrase': ""
         }
+
+    def trigger(self):
+        pass
 

@@ -1,5 +1,8 @@
 from flask import render_template
 from Mist.app import service
+from MistDB import dbDevice
+
+device = dbDevice()
 
 @service.route('/')
 def index():
@@ -7,4 +10,7 @@ def index():
 
 @service.route('/equipo')
 def equipo():
-    return render_template('equipo.html');
+    manual = ""
+    if device.getProp('manual'):
+        manual = "checked"
+    return render_template('equipo.html', manual = manual);
