@@ -54,103 +54,36 @@
 
 		<div class="container">
 			<div class="row">
-
 				<br/>
-				<div class="col-xs-12">
-					<h3 class="text-center"> Programación para: <span class="id"> 12345678</span></h3>
+				<div class="col-xs-12 text-center">
+					<h3>Configuración: <span class="id"> 12345678</span></h3>
+					<br />
 				</div>
 				<div class="col-xs-12">
-					<br />
+					<form>
 
-					<div class="table-responsive">
-						<table class="table">
-							<col width="80">
-							<tbody>
-								<tr>
-									<th colspan="2" class="table-header text-center">Programación regular
-									<br/>
-									<a href="conf2.html">Editar</a></th>
-								</tr>
-
-								<tr>
-									<th scope="row">Hora inicio <td> 13:00</td>
-								</tr>
-								<tr>
-									<th scope="row">Hora final <td> 13:00</td>
-								</tr>
-								<tr>
-									<th scope="row">Días <td> Lunes, martes</td>
-								</tr>
-							</tbody>
-						</table>
-					</div>
-
-					<br />
-					<div class="table-responsive">
-						<table class="table">
-							<col width="80">
-							<tbody>
-								<tr>
-									<th colspan="2" class="table-header text-center">Programar Eventos</th>
-								</tr>
-
-								<tr>
-									<th scope="row">Evento 1
-									<br/>
-									<a href="conf2a.html">Editar</a></th>
-									<td>día
-									<br/>
-									fecha </td>
-								</tr>
-								<tr>
-									<th scope="row">Evento 2
-									<br/>
-									<a href="conf2a.html">Editar</a></th>
-									<td>día
-									<br/>
-									fecha </td>
-								</tr>
-								<tr>
-									<th scope="row">Evento 3
-									<br/>
-									<a href="conf2a.html">Editar</a></th>
-									<td>día
-									<br/>
-									fecha </td>
-								</tr>
-							</tbody>
-						</table>
-					</div>
-
-					<br />
-
-					<div class="table-responsive">
-						<table class="table">
-							<col width="80">
-							<tbody>
-								<tr>
-									<th colspan="2" class="table-header text-center">Configuración</th>
-								</tr>
-
-								<tr>
-									<th scope="row">Fecha
-									<br/>
-									<a href="conf2b.html">Editar</a></th>
-									<td> 5 de marzo 2017
-									<br/>
-									10:23</td>
-								</tr>
-								<tr>
-									<th scope="row">Manual
-									<br/>
-									<a href="conf2b.html">Editar</a></th>
-									<td> 5 minutos </td>
-
-								</tr>
-							</tbody>
-						</table>
-					</div>
-
+						<div class="well">
+							<div id="datetimepicker" class="input-append">
+								<input data-format="hh:mm:ss" type="text">
+								</input>
+								<span class="add-on"> <i data-time-icon="icon-time" data-date-icon="icon-calendar"> </i> </span>
+							</div>
+						</div>
+						<div>
+							<div class="col-xs-6">
+								<br />
+								<button type="submit" class="btn btn-config">
+									Cancelar
+								</button>
+							</div>
+							<div class="col-xs-6 text-right">
+								<br />
+								<button type="submit" class="btn btn-config">
+									Enviar
+								</button>
+							</div>
+						</div>
+					</form>
 				</div>
 
 			</div>
@@ -176,12 +109,14 @@
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 		<script src="js/bootstrap.min.js"></script>
 		<script src="//cdnjs.cloudflare.com/ajax/libs/less.js/2.5.1/less.min.js"></script>
-		<script type="text/javascript" src="js/bootstrap-timepicker.js"></script>
+		<script type="text/javascript" src="js/bootstrap-datetimepicker.min.js"></script>
 
-		<script type="text/javascript">
-			$('#timepicker1').timepicker();
-			$('#timepicker2').timepicker();
-		</script>
+	    <script type="text/javascript">
+      $('#datetimepicker').datetimepicker({
+        format: 'dd/MM/yyyy hh:mm:ss',
+        language: 'pt-BR'
+      });
+    </script>
 
 	</body>
 </html>

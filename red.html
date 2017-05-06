@@ -12,14 +12,17 @@
 		<title> Mist logic</title>
 		<link href="css/main.css" rel="stylesheet">
 		<link href="fonts/font-awesome/css/font-awesome.css" rel="stylesheet">
+		<link rel="stylesheet/less" type="text/css" href="css/timepicker.less" />
+
 		<!-- HTML5 shim and Respond.js0	 for IE8 support of HTML5 elements and media queries -->
 		<!--[if lt IE 9]>
 		<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
 		<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 		<![endif]-->
 	</head>
+
 	<body>
-			<header>
+		<header>
 			<div id="header">
  <nav class="navbar navbar-default " role="navigation">
         <div class="container">
@@ -39,7 +42,7 @@
                     </li>
                     <li>
                         <a href="#">Equipos</a>
-     	               </li>
+                    </li>
                 </ul>
             </div>
         </div>
@@ -50,93 +53,59 @@
 
 		<div class="container">
 			<div class="row">
-					<br/>
-					<div class="col-xs-12 ">
-						<br />
-						<h3 class="lineh"> Estas conectado a: </h3>
-						<h3 class="text-center id"> 12345678 </h3>
-						<div class="alert alert-warning">
-  <strong><i class="fa fa-exclamation-triangle fa-2x" aria-hidden="true"></i></strong> Indicates a warning that might need attention.
-</div>
-						<div class="table-responsive">
-							<table class="table text-center">
-								<tbody>
-									<tr>
-										<td>
-										<p class="text-center">
-											Manual
-										</p>
-										<div class="contentswitch">
-											<div class="switch">
-												<input type="checkbox" name="switch" class="switch-checkbox" id="myswitch" checked>
-												<label class="switch-label" for="myswitch"> <span class="switch-inner"></span> <span class="switch-switch"></span> </label>
-											</div>
-										</div></td>
-										<td>
-										<p class="text-center">
-											Configurar
-										</p><span class="btnalign">
-											<button type="submit" class="btn btn-default btn-config">
-												<a href="conf.html"> <i class="fa fa-cog" aria-hidden="true"></i></a>
-											</button> </span></td>
-									</tr>
 
-								</tbody>
-							</table>
-						</div>
-					
-					
-						<div class="table-responsive">
-							<table class="table">
-								<col width="80">
-								<tbody>
-									<tr>
-										<th scope="row">Identificador</th>
-										<td>12345678</td>
-									</tr>
-									<tr>
-										<th scope="row">Ubicación</th>
-										<td>CDMX
-										<br/>
-										12345678901234567890</td>
-									</tr>
-									<tr>
-										<th scope="row">Fecha y Hora del equipo</th>
-										<td> 17/01/2017
-											</td>
-										
-									</tr>
-									<tr>
-										<th scope="row">Configuración Manual</th>
-										<td>5 minutos</td>
-									</tr>
-									<tr>
-										<th scope="row">Eventos Activos</th>
-										<td>Evento 1
-											<br />
-											Evento 2
-											</td>
-										
-									</tr>
-										<tr>
-										<th scope="row">Horas trabajadas</th>
-										<td>xxx</td>
-									</tr>
-									<tr>
-										<th scope="row">Tiempo activada la bomba</th>
-										<td>xxx</td>
-									</tr>
-								</tbody>
-							</table>
-						</div>
-					
+					<br/>
+					<div class="col-xs-12 text-center">
+						<h3> Configuración de Red</h3>
+						<br />
+					</div>
+					<div class="col-xs-12">
+
+						<form>
+							<div class="form-group text-center">
+								<button type="submit" class="btn btn-config">
+									Buscar Red
+								</button>
+							</div>
+
+							<div class="form-group">
+								<label for="selectred">Seleccionar red:</label>
+								<select  multiple class="form-control" id="selectred"></select>
+
+							</div>
+
+							<div class="col-xs-12">
+								<p>
+									Red seleccionada <span>2</span>
+								</p>
+							</div>
+
+							<div class="form-group">
+								<label>Ingresa la contraseña</label>
+								<input type="password" class="form-control">
+							</div>
+
+							<div>
+								<div class="col-xs-6">
+									<br />
+									<button type="submit" class="btn btn-config">
+										Cancelar
+									</button>
+								</div>
+								<div class="col-xs-6 text-right">
+									<br />
+									<button type="submit" class="btn btn-config">
+										Enviar
+									</button>
+								</div>
+							</div>
+						</form>
 					</div>
 			</div>
 		</div>
-
 		<footer>
 			<div id="footer">
-					<ul>
+							<ul>
 						<li>
 							<a href="">algo 1</a>
 						</li>
@@ -152,6 +121,45 @@
 
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 		<script src="js/bootstrap.min.js"></script>
+		<script src="//cdnjs.cloudflare.com/ajax/libs/less.js/2.5.1/less.min.js"></script>
+		<script type="text/javascript" src="js/bootstrap-timepicker.js"></script>
+
+		<script type="text/javascript">
+			$('#timepicker1').timepicker();
+			$('#timepicker2').timepicker();
+			
+			
+		</script>
+		<script type="text/javascript">
+			var jsonData = {
+				"Table" : [{
+					"redid" : "2",
+					"redname" : "red1"
+				}, {
+					"redid" : "3",
+					"redname" : "red2"
+				}, {
+					"redid" : "4",
+					"redname" : "red3"
+				}, {
+					"redid" : "5",
+					"redname" : "red4"
+				}, {
+					"redid" : "6",
+					"redname" : "red5"
+				}]
+			};
+
+			$(document).ready(function() {
+				var listItems = '<option selected="selected" value="0">- Select -</option>';
+
+				for (var i = 0; i < jsonData.Table.length; i++) {
+					listItems += "<option value='" + jsonData.Table[i].redid + "'>" + jsonData.Table[i].redname + "</option>";
+				}
+
+				$("#selectred").html(listItems);
+			});
+		</script>
 
 	</body>
 </html>
