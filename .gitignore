@@ -1,3 +1,4 @@
 *.mwb.bak
 *.pyc
 *.swp
+node_modules

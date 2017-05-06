@@ -12,7 +12,7 @@
     <title>Mist Logic</title>
 
     <!-- Bootstrap core CSS -->
-    <link href="{{ url_for('static', filename='main.min.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/main.css') }}" rel="stylesheet">
 
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <!--<link href="../../assets/css/ie10-viewport-bug-workaround.css" rel="stylesheet">-->
@@ -37,7 +37,7 @@
 
 				<div class="col-md-4 col-md-offset-4 text-center">
 					<br/>
-					<img  id="img_logo" src="images/logo.jpg">
+					<img  id="img_logo" src="{{ url_for('static', filename='images/logo.jpg') }}">
 
 					<form id="login-form">
 						<br/>
@@ -70,8 +70,9 @@
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <!--<script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>-->
-    <script src=".{{ url_for('static', filename='bootstrap.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='css/bootstrap.min.js') }}"></script>
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
+    <script src="{{ url_for('static', filename='js/index.js') }}"></script>
   </body>
 </html>
