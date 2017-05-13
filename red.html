@@ -130,36 +130,6 @@
 			
 			
 		</script>
-		<script type="text/javascript">
-			var jsonData = {
-				"Table" : [{
-					"redid" : "2",
-					"redname" : "red1"
-				}, {
-					"redid" : "3",
-					"redname" : "red2"
-				}, {
-					"redid" : "4",
-					"redname" : "red3"
-				}, {
-					"redid" : "5",
-					"redname" : "red4"
-				}, {
-					"redid" : "6",
-					"redname" : "red5"
-				}]
-			};
-
-			$(document).ready(function() {
-				var listItems = '<option selected="selected" value="0">- Select -</option>';
-
-				for (var i = 0; i < jsonData.Table.length; i++) {
-					listItems += "<option value='" + jsonData.Table[i].redid + "'>" + jsonData.Table[i].redname + "</option>";
-				}
-
-				$("#selectred").html(listItems);
-			});
-		</script>
 
 	</body>
 </html>
