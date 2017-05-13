@@ -4,5 +4,6 @@ Priority: optional
 Section: python
 Architecture: all
 Maintainer: Jesus Flores <joy_warmgun@hotmail.com>
+Depends: mongodb
 Description: MistLogic
 
