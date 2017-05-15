@@ -17,8 +17,11 @@
 		<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
 		<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 		<![endif]-->
+		<script src="js/Chart.min.js"></script>
 	</head>
+
 	<body>
+
 		<header>
 			<div id="header">
 				<nav class="navbar navbar-default " role="navigation">
@@ -50,91 +53,26 @@
 
 		<div class="container">
 			<div class="row">
-					<div class="col-xs-12 text-right">
-					<p>25/12/12017 00:00 pm</p>
+				<div class="col-xs-12 text-right">
+					<p>
+						25/12/12017 00:00 pm
+					</p>
 				</div>
-				<div class="col-xs-12 ">
-					<br />
-					<h3 class="lineh"> Estas conectado a: </h3>
+				<div class="col-xs-12 text-center">
+					<h3> Gráfica litros consumidos para: </h3>
 					<h3 class="text-center id"> 12345678 </h3>
-					<div class="alert alert-warning">
-						<strong><i class="fa fa-exclamation-triangle fa-2x" aria-hidden="true"></i></strong> Indicates a warning that might need attention.
-					</div>
-					<div class="table-responsive">
-						<table class="table text-center">
-							<tbody>
-								<tr>
-									<td>
-									<p class="text-center">
-										Manual
-									</p>
-									<div class="contentswitch">
-										<div class="switch">
-											<input type="checkbox" name="switch" class="switch-checkbox" id="myswitch" checked>
-											<label class="switch-label" for="myswitch"> <span class="switch-inner"></span> <span class="switch-switch"></span> </label>
-										</div>
-									</div></td>
-									<td>
-									<p class="text-center">
-										Configurar
-									</p><span class="btnalign">
-										<button type="submit" class="btn btn-default btn-config">
-											<a href="configuracion_general.html"> <i class="fa fa-cog" aria-hidden="true"></i></a>
-										</button> </span></td>
-								</tr>
+					<br />
+				</div>
 
-							</tbody>
-						</table>
-					</div>
-
-					<div class="table-responsive">
-						<table class="table">
-							<col width="80">
-							<tbody>
-								<tr>
-									<th scope="row">Identificador</th>
-									<td>12345678</td>
-								</tr>
-								<tr>
-									<th scope="row">Ubicación</th>
-									<td>CDMX
-									<br/>
-									12345678901234567890</td>
-								</tr>
-								<tr>
-									<th scope="row">Fecha y Hora del equipo</th>
-									<td> 17/01/2017 </td>
-
-								</tr>
-								<tr>
-									<th scope="row">Configuración Manual</th>
-									<td>5 minutos</td>
-								</tr>
-								<tr>
-									<th scope="row">Eventos Activos</th>
-									<td>Evento 1
-									<br />
-									Evento 2 </td>
-
-								</tr>
-								<tr>
-									<th scope="row">Horas trabajadas</th>
-									<td>xxx</td>
-								</tr>
-								<tr>
-									<th scope="row">Tiempo activada la bomba</th>
-									<td>xxx</td>
-								</tr>
-							</tbody>
-						</table>
-					</div>
+				<div class="col-md-8 col-md-offset-2" >
+					<canvas id="buyers" height="400"width="600"></canvas>
 
 				</div>
 			</div>
 		</div>
-
 		<footer>
 			<div id="footer">
+
 				<ul>
 					<li>
 						<a href="">algo 1</a>
@@ -146,11 +84,53 @@
 						<a href="">algo 3</a>
 					</li>
 				</ul>
+
 			</div>
 		</footer>
 
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 		<script src="js/bootstrap.min.js"></script>
+		<script>
+			var json = [{
+				"fecha" : "01/01/2017",
+				"litros_consumidos" : "1.5"
+			}, {
+				"fecha" : "02/01/2017",
+				"litros_consumidos" : "2"
+			}, {
+				"fecha" : "03/01/2017",
+				"litros_consumidos" : "3"
+			}];
+			var json2 = ["01/01/2017", "02/01/2017", "03/01/2017", "04/01/2017"];
+
+			var chartjsData2 = [];
+			for (var i = 0; i < json.length; i++) {
+				chartjsData2.push(json[i].fecha);
+			}
+
+			var chartjsData = [];
+			for (var i = 0; i < json.length; i++) {
+				chartjsData.push(json[i].litros_consumidos);
+			}
+
+			var buyerData = {
+				labels : chartjsData2,
+				datasets : [{
+					fillColor : "rgba(131,109,194,0.4)",
+					strokeColor : "#886db8",
+					pointColor : "#fff",
+					pointStrokeColor : "#886db8",
+					data : chartjsData
+				}]
+			}
+
+			// get line chart canvas
+			var buyers = document.getElementById('buyers').getContext('2d');
+
+			// draw line chart
+			new Chart(buyers).Line(buyerData);
+
+		</script>
 
 	</body>
 </html>

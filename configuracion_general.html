@@ -12,7 +12,7 @@
 		<title> Mist logic</title>
 		<link href="css/main.css" rel="stylesheet">
 		<link href="fonts/font-awesome/css/font-awesome.css" rel="stylesheet">
-		<link rel="stylesheet/less" type="text/css" href="css/timepicker.less" />
+		<link href="css/bootstrap-datetimepicker.min.css" rel="stylesheet">
 
 		<!-- HTML5 shim and Respond.js0	 for IE8 support of HTML5 elements and media queries -->
 		<!--[if lt IE 9]>
@@ -42,7 +42,7 @@
 									<a href="red.html">Red</a>
 								</li>
 								<li>
-									<a href="#">Equipos</a>
+									<a href="equipos.html">Equipos</a>
 								</li>
 							</ul>
 						</div>
@@ -54,10 +54,14 @@
 
 		<div class="container">
 			<div class="row">
-
-				<br/>
+				<div class="col-xs-12 text-right">
+					<p>
+						25/12/12017 00:00 pm
+					</p>
+				</div>
 				<div class="col-xs-12">
-					<h3 class="text-center"> Programación para: <span class="id"> 12345678</span></h3>
+					<h3 class="text-center"> Programación para:</h3>
+					<h3 class="text-center id"> 12345678 </h3>
 				</div>
 				<div class="col-xs-12">
 					<br />
@@ -69,7 +73,7 @@
 								<tr>
 									<th colspan="2" class="table-header text-center">Programación regular
 									<br/>
-									<a href="conf2.html">Editar</a></th>
+									<a href="configuracion_regular.html">Editar</a></th>
 								</tr>
 
 								<tr>
@@ -97,7 +101,7 @@
 								<tr>
 									<th scope="row">Evento 1
 									<br/>
-									<a href="conf2a.html">Editar</a></th>
+									<a href="configuracion_evento.html">Editar</a></th>
 									<td>día
 									<br/>
 									fecha </td>
@@ -105,7 +109,7 @@
 								<tr>
 									<th scope="row">Evento 2
 									<br/>
-									<a href="conf2a.html">Editar</a></th>
+									<a href="configuracion_evento.html">Editar</a></th>
 									<td>día
 									<br/>
 									fecha </td>
@@ -113,7 +117,7 @@
 								<tr>
 									<th scope="row">Evento 3
 									<br/>
-									<a href="conf2a.html">Editar</a></th>
+									<a href="configuracion_evento.html">Editar</a></th>
 									<td>día
 									<br/>
 									fecha </td>
@@ -135,7 +139,7 @@
 								<tr>
 									<th scope="row">Fecha
 									<br/>
-									<a href="conf2b.html">Editar</a></th>
+									<a href="configuracion_fecha.html">Editar</a></th>
 									<td> 5 de marzo 2017
 									<br/>
 									10:23</td>
@@ -143,14 +147,31 @@
 								<tr>
 									<th scope="row">Manual
 									<br/>
-									<a href="conf2b.html">Editar</a></th>
+									<a href="configuracion_manual.html">Editar</a></th>
 									<td> 5 minutos </td>
 
 								</tr>
 							</tbody>
 						</table>
 					</div>
+				<div class="table-responsive">
+						<table class="table">
+							<col width="80">
+							<tbody>
+								<tr>
+									<th colspan="2" class="table-header text-center">Estadísticas</th>
+								</tr>
 
+								<tr>
+									<th scope="row">Litros consumidos
+									<br/>
+									</th>
+									<td> <a href="grafica_litros.html"> Ver Gráfica</a></td>
+								</tr>
+								
+							</tbody>
+						</table>
+					</div>
 				</div>
 
 			</div>

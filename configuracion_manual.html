@@ -12,8 +12,7 @@
 		<title> Mist logic</title>
 		<link href="css/main.css" rel="stylesheet">
 		<link href="fonts/font-awesome/css/font-awesome.css" rel="stylesheet">
-		<link rel="stylesheet/less" type="text/css" href="css/timepicker.less" />
-
+		<link href="css/bootstrap-datetimepicker.min.css" rel="stylesheet">
 		<!-- HTML5 shim and Respond.js0	 for IE8 support of HTML5 elements and media queries -->
 		<!--[if lt IE 9]>
 		<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
@@ -42,7 +41,7 @@
 									<a href="red.html">Red</a>
 								</li>
 								<li>
-									<a href="#">Equipos</a>
+									<a href="equipos.html">Equipos</a>
 								</li>
 							</ul>
 						</div>
@@ -54,22 +53,28 @@
 
 		<div class="container">
 			<div class="row">
-				<br/>
+					<div class="col-xs-12 text-right">
+					<p>25/12/12017 00:00 pm</p>
+				</div>
 				<div class="col-xs-12 text-center">
-					<h3>Configuración: <span class="id"> 12345678</span></h3>
+					<h3> Programación Manual: </h3>
+					<h3 class="text-center id"> 12345678 </h3>
 					<br />
 				</div>
 				<div class="col-xs-12">
+						
+					<h4> Tiempo actual: 300 segundos</h4>
 					<form>
 
-						<div class="well">
-							<div id="datetimepicker" class="input-append">
-								<input data-format="hh:mm:ss" type="text">
-								</input>
-								<span class="add-on"> <i data-time-icon="icon-time" data-date-icon="icon-calendar"> </i> </span>
+
+						<div class="form-group">
+											
+							<div class="col-md-8 col-md-offset-2" >
+								<label>Segundos</label>
+								<input type="number" class="form-control" maxlength="2">
 							</div>
 						</div>
-						<div>
+	<div>
 							<div class="col-xs-6">
 								<br />
 								<button type="submit" class="btn btn-config">
@@ -107,16 +112,20 @@
 		</footer>
 
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.15.1/moment.min.js"></script>
 		<script src="js/bootstrap.min.js"></script>
-		<script src="//cdnjs.cloudflare.com/ajax/libs/less.js/2.5.1/less.min.js"></script>
-		<script type="text/javascript" src="js/bootstrap-datetimepicker.min.js"></script>
+		<script src="js/bootstrap-datetimepicker.min.js"></script>
 
-	    <script type="text/javascript">
-      $('#datetimepicker').datetimepicker({
-        format: 'dd/MM/yyyy hh:mm:ss',
-        language: 'pt-BR'
-      });
-    </script>
+		<script type="text/javascript">
+			$(function() {
+				$('#datetimepicker1').datetimepicker({
+					format : 'LT'
+				});
+				$('#datetimepicker2').datetimepicker({
+					format : 'LT'
+				});
+			});
+		</script>
 
 	</body>
 </html>

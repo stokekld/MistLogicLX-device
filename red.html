@@ -24,112 +24,106 @@
 	<body>
 		<header>
 			<div id="header">
- <nav class="navbar navbar-default " role="navigation">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand logosesion" href="#"><img  id="img_logo" src="images/logo2.jpg" ></a>
-            </div>
-                  <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav">
-                    <li>
-                        <a href="red.html">Red</a>
-                    </li>
-                    <li>
-                        <a href="#">Equipos</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
+				<nav class="navbar navbar-default " role="navigation">
+					<div class="container">
+						<div class="navbar-header">
+							<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+								<span class="sr-only">Toggle navigation</span>
+								<span class="icon-bar"></span>
+								<span class="icon-bar"></span>
+								<span class="icon-bar"></span>
+							</button>
+							<a class="navbar-brand logosesion" href="#"><img  id="img_logo" src="images/logo2.jpg" ></a>
+						</div>
+						<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+							<ul class="nav navbar-nav">
+								<li>
+									<a href="red.html">Red</a>
+								</li>
+								<li>
+									<a href="equipos.html">Equipos</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</nav>
 
 			</div>
 		</header>
 
 		<div class="container">
 			<div class="row">
+				<div class="col-xs-12 text-right">
+					<p>25/12/12017 00:00 pm</p>
+				</div>
+				<div class="col-xs-12 text-center">
+					<h3> Configuración de Red</h3>
+					<br />
+				</div>
+				<div class="col-xs-12">
 
-					<br/>
-					<div class="col-xs-12 text-center">
-						<h3> Configuración de Red</h3>
-						<br />
-					</div>
-					<div class="col-xs-12">
+					<form>
+						<div class="form-group text-center">
+							<button type="button"  class="btn btn-config" id="get-data">
+								Buscar Red
+							</button>
+						</div>
 
-						<form>
-							<div class="form-group text-center">
+						<div class="form-group ">
+							<label for="selectred">Seleccionar red:</label>
+							<div id="show-data" class="available-networks"></div>
+						</div>
+
+						<div class="col-xs-12">
+							<p>
+								Red seleccionada: <span id="network-selected" ></span>
+
+							</p>
+						</div>
+
+						<div class="form-group">
+							<label>Ingresa la contraseña</label>
+							<input type="password" class="form-control">
+						</div>
+
+						<div>
+							<div class="col-xs-6">
+								<br />
 								<button type="submit" class="btn btn-config">
-									Buscar Red
+									Cancelar
 								</button>
 							</div>
-
-							<div class="form-group">
-								<label for="selectred">Seleccionar red:</label>
-								<select  multiple class="form-control" id="selectred"></select>
-
+							<div class="col-xs-6 text-right">
+								<br />
+								<button type="submit" class="btn btn-config">
+									Enviar
+								</button>
 							</div>
-
-							<div class="col-xs-12">
-								<p>
-									Red seleccionada <span>2</span>
-								</p>
-							</div>
-
-							<div class="form-group">
-								<label>Ingresa la contraseña</label>
-								<input type="password" class="form-control">
-							</div>
-
-							<div>
-								<div class="col-xs-6">
-									<br />
-									<button type="submit" class="btn btn-config">
-										Cancelar
-									</button>
-								</div>
-								<div class="col-xs-6 text-right">
-									<br />
-									<button type="submit" class="btn btn-config">
-										Enviar
-									</button>
-								</div>
-							</div>
-						</form>
-					</div>
+						</div>
+					</form>
+				</div>
 			</div>
 		</div>
 		<footer>
-			<div id="footer">
-							<ul>
-						<li>
-							<a href="">algo 1</a>
-						</li>
-						<li>
-							<a href="">algo 2</a>
-						</li>
-						<li>
-							<a href="">algo 3</a>
-						</li>
-					</ul>
+			<div id="footer" class="sticky">
+				<ul>
+					<li>
+						<a href="">algo 1</a>
+					</li>
+					<li>
+						<a href="">algo 2</a>
+					</li>
+					<li>
+						<a href="">algo 3</a>
+					</li>
+				</ul>
 			</div>
 		</footer>
 
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 		<script src="js/bootstrap.min.js"></script>
-		<script src="//cdnjs.cloudflare.com/ajax/libs/less.js/2.5.1/less.min.js"></script>
-		<script type="text/javascript" src="js/bootstrap-timepicker.js"></script>
+		<script src="networks.js"></script>
 
-		<script type="text/javascript">
-			$('#timepicker1').timepicker();
-			$('#timepicker2').timepicker();
-			
-			
-		</script>
 
 	</body>
 </html>
