@@ -1,12 +1,11 @@
-from .MistSys import commandExe
+from MistSys import commandExe
 import os
 
 class Tools(object):
 
-    wpaConfPath = '/etc/wpa_supplicant/wpa_supplicant.conf'
-
     def __init__(self, iface):
         self.iface = iface
+        self.dhcpdConfPath = '/etc/mistlogic/dhcpd.conf'
 
     def wpaPassphrase(self, ssid, passphrase):
         f = open(self.wpaConfPath, 'w')
@@ -25,4 +24,4 @@ class Tools(object):
         return commandExe('dhclient %s' % self.iface)
 
     def dhcpServer(self):
-        return commandExe('dhcpd %s' % self.iface)
+        return commandExe('dhcpd -cf %s %s' % ( self.dhcpdConfPath, self.iface ))

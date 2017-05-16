@@ -1,13 +1,12 @@
 from subprocess import check_output
-from .MistSys import commandExe
-from MistLogic.MistError import Error, Info
+from MistSys import commandExe
+from MistError import Error, Info
 import os, signal
 
 
 class Process(object):
     def getPid(self, name):
         try:
-            # return int(check_output(["pidof", name]))
             return int(commandExe("pidof %s" % name).output)
         except:
             Info("No se encontro el pid de %s" % name)

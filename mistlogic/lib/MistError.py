@@ -1,5 +1,6 @@
-from . import MAIN_DIR
 import logging, os
+
+MAIN_DIR = os.environ["MAIN_DIR"]
 
 # Archivo y configuracion del log
 logPath = os.path.join(MAIN_DIR, 'mist.log')

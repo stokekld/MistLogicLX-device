@@ -18,7 +18,7 @@ $(PACKAGE):
 	cp -r ../mistlogic/* $(PROJECT_DIR)
 	cp mistlogic.service $(SYSTEMD_DIR)
 
-	pip install -t mistlogic_0.1-1/etc/mistlogic/lib/ -r mistlogic_0.1-1/etc/mistlogic/front-end/requeriments.txt
+	pip install -t mistlogic_0.1-1/etc/mistlogic/lib/ -r mistlogic_0.1-1/etc/mistlogic/requeriments.txt
 
 	$(C) $(PACKAGE)
 

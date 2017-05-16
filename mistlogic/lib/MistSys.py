@@ -1,5 +1,5 @@
-from .MistError import Error, Info
-import subprocess
+from MistError import Error, Info
+import subprocess, time
 
 class commandExe:
 
@@ -15,6 +15,7 @@ class commandExe:
             Info('Ejecutando %s' % self.command)
             self.output = subprocess.check_output(self.command, shell=True, stderr=subprocess.STDOUT)
             Info(self.output)
+            time.sleep(1)
             return True
         except Exception as e:
             Info('Error al tratar de ejecutar el comando %s' % self.command)
