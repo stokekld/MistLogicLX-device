@@ -1,0 +1,8 @@
+[Unit]
+Description=Mist Network
+
+[Service]
+ExecStart=/usr/bin/python /etc/mistlogic/network.py
+
+[Install]
+WantedBy=multi-user.target

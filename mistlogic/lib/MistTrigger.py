@@ -1,4 +1,5 @@
 import os
+import RPi.GPIO as GPIO
 
 class deviceTrigger(object):
 
@@ -8,7 +9,7 @@ class deviceTrigger(object):
 
     def __change(self):
         if self.state['manual']:
-            os.system("echo 1 > /sys/class/gpio/gpio23/value")
+            GPIO.output(23, GPIO.HIGH)
         else:
-            os.system("echo 0 > /sys/class/gpio/gpio23/value")
+            GPIO.output(23, GPIO.LOW)
 
