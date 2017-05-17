@@ -15,6 +15,6 @@ else:
     manualInit = GPIO.LOW
 
 GPIO.setmode(GPIO.BOARD)
-GPIO.setup(23, GPIO.OUT, initial=manualInit)
+GPIO.setup(72, GPIO.OUT, initial=manualInit)
 
 service.run(host=service.config['HOST'], port=service.config['PORT'], debug=service.config['DEBUG'])

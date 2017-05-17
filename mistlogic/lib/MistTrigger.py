@@ -9,7 +9,7 @@ class deviceTrigger(object):
 
     def __change(self):
         if self.state['manual']:
-            GPIO.output(23, GPIO.HIGH)
+            GPIO.output(72, GPIO.HIGH)
         else:
-            GPIO.output(23, GPIO.LOW)
+            GPIO.output(72, GPIO.LOW)
 
